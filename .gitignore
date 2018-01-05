@@ -1,4 +1,4 @@
-cjs/
+lib/
 node_modules/
 
 out.js

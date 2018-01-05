@@ -2,10 +2,10 @@
   "name": "clone-react",
   "version": "1.0.0",
   "description": "Clone of React",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "compile": "babel index.js -o out.js"
+    "compile": "babel src --out-dir lib --source-maps inline"
   },
   "repository": {
     "type": "git",

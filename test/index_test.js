@@ -1,1 +1,1 @@
-import { mutableValue } from '../out'
+import { mutableValue } from '../lib/index'
