@@ -4,7 +4,7 @@
   "description": "Clone of React",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "mocha --require babel-core/register",
     "compile": "babel src --out-dir lib --source-maps inline"
   },
   "repository": {
