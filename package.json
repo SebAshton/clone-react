@@ -1,0 +1,25 @@
+{
+  "name": "clone-react",
+  "version": "1.0.0",
+  "description": "Clone of React",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "compile": "babel index.js -o out.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebAshton/clone-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebAshton/clone-react/issues"
+  },
+  "homepage": "https://github.com/SebAshton/clone-react#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "mocha": "^4.1.0"
+  }
+}
