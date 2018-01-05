@@ -1,1 +1,5 @@
-export let mutableValue = 3
+import { createElement } from './createElement'
+
+const NARC = { createElement }
+
+export default NARC
