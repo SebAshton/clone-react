@@ -39,4 +39,17 @@ describe('NARC', () => {
       assert.equal(result.childNodes[0].childNodes[0].nodeValue, 'click me');
     })
   });
+
+  describe('updateDOM', () => {
+    describe('when no nodes exist', () => {
+      it('should insert a node', () => {
+        const initialDOM = NARC.createVirtualElement('div', '', []);
+        const newDOM = NARC.createVirtualElement(
+          'div',
+          '',
+          [ NARC.createVirtualElement('a', '', ['click me']) ]
+        );
+      });
+    });
+  });
 })
