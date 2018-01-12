@@ -6,15 +6,37 @@ describe('NARC', () => {
     assert.equal((typeof NARC), 'object')
   })
 
-  it('has a createElement function', () => {
-    assert.equal(typeof NARC.createElement, 'function')
+  it('has a createVirtualElement function', () => {
+    assert.equal(typeof NARC.createVirtualElement, 'function')
+  })
+
+  describe('createVirtualElement', () => {
+    it('should create hash from 3 arguments', () => {
+      const element = NARC.createVirtualElement(1, 2, [])
+
+      assert.deepEqual(element, { type: 1, props: 2, children: [] })
+    })
   })
 
   describe('createElement', () => {
-    it('should create hash from 3 arguments', () => {
-      const element = NARC.createElement(1, 2, 3)
+    it('should create a simple DOM node', () => {
+      const virtualDOM = NARC.createVirtualElement('div', '', []);
+      const result = NARC.createElement(virtualDOM);
 
-      assert.deepEqual(element, { type: 1, props: 2, children: 3 })
+      assert.equal(result.nodeName, 'DIV')
     })
-  })
+
+    it('should create a complex DOM node', () => {
+      const virtualDOM = NARC.createVirtualElement(
+        'div',
+        '',
+        [ NARC.createVirtualElement('a', '', ['click me']) ]
+      );
+
+      const result = NARC.createElement(virtualDOM);
+
+      assert.equal(result.childNodes[0].nodeName, 'A');
+      assert.equal(result.childNodes[0].childNodes[0].nodeValue, 'click me');
+    })
+  });
 })
