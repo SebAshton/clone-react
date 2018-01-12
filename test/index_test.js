@@ -12,7 +12,7 @@ describe('NARC', () => {
 
   describe('createVirtualElement', () => {
     it('should create hash from 3 arguments', () => {
-      const element = NARC.createVirtualElement(1, 2, [])
+      const element = NARC.createVirtualElement(1, 2)
 
       assert.deepEqual(element, { type: 1, props: 2, children: [] })
     })
@@ -20,7 +20,7 @@ describe('NARC', () => {
 
   describe('createElement', () => {
     it('should create a simple DOM node', () => {
-      const virtualDOM = NARC.createVirtualElement('div', '', []);
+      const virtualDOM = NARC.createVirtualElement('div', '', '');
       const result = NARC.createElement(virtualDOM);
 
       assert.equal(result.nodeName, 'DIV')
@@ -30,7 +30,7 @@ describe('NARC', () => {
       const virtualDOM = NARC.createVirtualElement(
         'div',
         '',
-        [ NARC.createVirtualElement('a', '', ['click me']) ]
+        NARC.createVirtualElement('a', '', 'click me')
       );
 
       const result = NARC.createElement(virtualDOM);
